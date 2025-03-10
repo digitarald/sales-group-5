@@ -80,26 +80,29 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-auto bg-gradient-to-br from-indigo-950 to-blue-900 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-      <div className="w-full max-w-3xl">
-        <h1 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6 tracking-tight">
+      <div className="w-full max-w-4xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-6 tracking-tight">
           Sales Objection Practice
         </h1>
         
         <div className="w-full backdrop-blur-xl backdrop-saturate-150 rounded-2xl border border-white/[0.08] shadow-2xl">
           {isLoading ? (
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 animate-pulse border border-white/20">
-              <div className="mb-4">
-                <div className="h-6 w-3/4 bg-white/20 rounded mb-3"></div>
-                <div className="h-4 w-full bg-white/20 rounded mb-2"></div>
-                <div className="h-4 w-5/6 bg-white/20 rounded mb-2"></div>
-                <div className="h-4 w-4/6 bg-white/20 rounded"></div>
-              </div>
-              <div className="border-t border-white/20 my-4 pt-4">
-                <div className="h-6 w-3/4 bg-white/20 rounded mb-3"></div>
-                <div className="h-4 w-full bg-white/20 rounded"></div>
-              </div>
-              <div className="flex justify-end mt-6">
-                <div className="h-10 w-10 rounded-full bg-white/20"></div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 animate-pulse border border-white/20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <div className="h-6 w-32 bg-indigo-500/20 rounded-full"></div>
+                  <div className="space-y-2">
+                    <div className="h-7 w-5/6 bg-white/20 rounded"></div>
+                    <div className="h-7 w-4/6 bg-white/20 rounded"></div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-6 w-32 bg-blue-500/20 rounded-full"></div>
+                  <div className="space-y-2">
+                    <div className="h-6 w-full bg-white/20 rounded"></div>
+                    <div className="h-6 w-5/6 bg-white/20 rounded"></div>
+                  </div>
+                </div>
               </div>
             </div>
           ) : (
@@ -122,13 +125,13 @@ export default function Home() {
         </div>
         
         <div className="mt-8 text-center">
-          <p className="mb-4 text-white/80 text-sm">Not an interesting objection? Try another one.</p>
+          <p className="mb-4 text-white/80 text-sm sm:text-base lg:text-lg">Not an interesting objection or resolved this one?</p>
           <button 
             onClick={generateContent}
-            className="flex items-center gap-2 mx-auto px-6 py-2.5 bg-blue-600/90 hover:bg-blue-500/90 text-white/90 hover:text-white rounded-full transition-all shadow-lg hover:shadow-blue-500/25"
+            className="flex items-center gap-2 mx-auto px-6 py-2.5 bg-blue-600/90 hover:bg-blue-500/90 text-white/90 hover:text-white rounded-full transition-all shadow-lg hover:shadow-blue-500/25 text-base sm:text-lg lg:text-xl"
             disabled={isLoading}
           >
-            <FiRefreshCw className={`${isLoading ? 'animate-spin' : ''}`} />
+            <FiRefreshCw className={`${isLoading ? 'animate-spin' : ''} w-5 h-5 sm:w-6 sm:h-6`} />
             <span className="font-medium">Get new objection</span>
           </button>
         </div>
